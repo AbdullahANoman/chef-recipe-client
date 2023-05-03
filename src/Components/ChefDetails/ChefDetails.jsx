@@ -16,10 +16,11 @@ const ChefDetails = () => {
   // const {ingredients,cookingMethod,rating} =
   console.log(chef);
   return (
-    <div className=" bg-sky-800 my-container text-white">
-      <div className="my-container grid md:grid-cols-2 grid-cols-1 gap-5  ">
+    <div className="bg-gradient-to-r from-[#070d31] to-[#9873FF] pb-20">
+        <div className="  my-container text-white">
+      <div className="my-container lg:py-20 grid md:grid-cols-2 grid-cols-1 gap-10  items-center ">
         <div>
-          <img src={picture} alt="" />
+          <img className="rounded-xl" src={picture} alt="" />
         </div>
         <div>
           <h2 className="font-bold text-2xl text-center">{name}</h2>
@@ -39,6 +40,7 @@ const ChefDetails = () => {
           <Recipe key={index} recipe={recipe}></Recipe>
         ))}
       </div>
+    </div>
     </div>
   );
 };

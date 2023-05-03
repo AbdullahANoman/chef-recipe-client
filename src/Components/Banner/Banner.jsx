@@ -6,8 +6,8 @@ const Banner = () => {
     const chefsData = useLoaderData();
     
   return (
-    <div>
-      <div className="bg-blue-950 pb-40 text-white">
+    <div className="bg-gradient-to-r from-[#070d31] to-[#9873FF]">
+      <div className=" pb-40 text-white">
         <div className="my-container flex flex-col items-center justify-between lg:flex-row ">
           {/* Text Content */}
           <div className="relative lg:w-1/2 ">
@@ -15,12 +15,11 @@ const Banner = () => {
               <img className="rounded-xl md:mb-0 sm:pb-96 md:pb-0" style={{height:'600px',width:'600px'}} src="https://images.unsplash.com/photo-1595257841889-eca2678454e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
             </div>
           </div>
-          <div className="mb-10 lg:max-w-lg  lg:pr-5 lg:mb-0">
-            <div className="max-w-xl mb-6 lg:mt-8">
+          <div className="mb-10 lg:max-w-lg lg:mt-32  lg:pr-5 lg:mb-0">
+            <div className="max-w-xl mb-6 lg:mt-8 ">
               <div>
-                <p className="text-7xl font-bold ">
-                  One Step Closer To Your <br />{" "}
-                  <span className="text-purple-400">Dream Job</span>
+                <p className="text-6xl font-bold ">
+                  Cooking Easier  Than The Ever Before
                 </p>
               </div>
 

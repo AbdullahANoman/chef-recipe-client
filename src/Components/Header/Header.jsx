@@ -11,12 +11,12 @@ const Header = () => {
     logOut();
   };
   return (
-    <div className="bg-gray-100 mt-0">
+    <div className="bg-gradient-to-r from-[#070d31] to-[#9873FF] mt-0 text-white">
       <div className=" px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
           <Link to="/" className="inline-flex items-center">
-            <span className="ml-2 text-xl font-bold tracking-wide text-gray-800">
+            <span className="ml-2 text-xl font-bold tracking-wide text-white">
               Food BuZz
             </span>
           </Link>

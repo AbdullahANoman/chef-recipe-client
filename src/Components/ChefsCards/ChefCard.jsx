@@ -12,7 +12,7 @@ const ChefCard = ({ chef }) => {
     description,
   } = chef;
   return (
-    <div className="card w-full  bg-base-100 shadow-xl">
+    <div className="bg-gradient-to-r from-[#ffff] to-[#ffff] card w-full text-black hover:shadow-2xl   bg-base-100 shadow-xl">
       <figure>
         <img
           src={picture}
@@ -24,7 +24,7 @@ const ChefCard = ({ chef }) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         
-        <h4>Years of experience : {experience_years} years</h4>
+        <h4> {experience_years} years of experience</h4>
         <h4>Numbers of recipes : {num_recipes}</h4>
         <h2>Likes : {likes}</h2>
         <div className="card-actions justify-end">

@@ -14,6 +14,7 @@ import AuthProvider from './Providers/AuthProvider.jsx';
 import Blog from './Components/Blog/Blog.jsx';
 import Banner from './Components/Banner/Banner.jsx';
 import ChefDetails from './Components/ChefDetails/ChefDetails.jsx';
+import PrivateRout from './Firebase/PrivateRout.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'chefDetails/:id',
-        element : <ChefDetails></ChefDetails>,
+        element : <PrivateRout><ChefDetails></ChefDetails></PrivateRout>,
         loader : ({params})=> fetch(`http://localhost:5000/chefDetails/${params.id}`)
       }
     ]

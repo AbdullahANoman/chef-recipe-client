@@ -3,7 +3,7 @@ import ChefsCards from '../../Components/ChefsCards/ChefsCards';
 
 const ChefCardsLayout = ({chefsData}) => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-4  my-container'>
+        <div className='grid   md:grid-cols-4 md:py-20  my-container'>
             <div className='col-span-3'>
                 <ChefsCards chefsData={chefsData}></ChefsCards>
             </div>
