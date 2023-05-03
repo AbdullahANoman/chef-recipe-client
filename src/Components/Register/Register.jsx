@@ -29,6 +29,7 @@ const Register = () => {
         const loggedUser = result.user;
         console.log(loggedUser)
         setUser(loggedUser);
+        form.reset();
         setSuccess("User Created Successfully ");
       })
       .catch((error) => {

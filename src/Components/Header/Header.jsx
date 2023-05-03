@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import reactLogo from '../../assets/2.png'
+// import profileImage from ''
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../Providers/AuthProvider";
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
     logOut();
   };
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 mt-0">
       <div className=" px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           {/* Logo Section */}
@@ -50,14 +50,11 @@ const Header = () => {
               {user ? (
                 <>
                   <div className="flex items-center gap-2">
-                    <label
-                      tabIndex={0}
-                      className="btn btn-ghost btn-circle avatar"
-                    >
-                      <div className="w-10 rounded-full">
-                        <img src="https://i.ibb.co/gSTHXZJ/google-btn.png" className=" " />
+                    
+                      <div className="w-8  rounded-full">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="rounded-full " />
                       </div>
-                    </label>
+                    
                     <button
                       onClick={handleLogout}
                       className="me-3 mb-5 btn-primary"
