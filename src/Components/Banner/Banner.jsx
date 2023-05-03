@@ -7,12 +7,12 @@ const Banner = () => {
     
   return (
     <div>
-      <div className="bg-gray-100 pb-40">
+      <div className="bg-blue-950 pb-40 text-white">
         <div className="my-container flex flex-col items-center justify-between lg:flex-row ">
           {/* Text Content */}
           <div className="relative lg:w-1/2 ">
             <div className="w-full lg:w-4/5 lg:ml-auto h-56  sm:h-96">
-              <img src="https://i.ibb.co/drD9bqP/P3-OLGJ1-copy-1.png" alt="" />
+              <img className="rounded-xl md:mb-0 sm:pb-96 md:pb-0" style={{height:'600px',width:'600px'}} src="https://images.unsplash.com/photo-1595257841889-eca2678454e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="" />
             </div>
           </div>
           <div className="mb-10 lg:max-w-lg  lg:pr-5 lg:mb-0">
@@ -24,16 +24,14 @@ const Banner = () => {
                 </p>
               </div>
 
-              <p className="text-base text-gray-700 md:text-lg">
-                Explore thousands of job opportunities with all the information
-                you need. Its your future. Come find it. Manage all your job
-                application from start to finish.
+              <p className="text-base text-gray-100 md:text-lg">
+              Our Chefs offer you perfect cooking, best served dishes with fresh ingredients and old recipes. We have only carefully sourced and seasonal ingredients in our disposal to make rustic dishes. We provide you with daily self-made bread, sourdough pizza, roasted fish-meat-vegetables and many more.
               </p>
             </div>
             <div className="flex flex-col items-center md:flex-row">
               <Link to="/" className=" md:w-auto md:mr-4 border border-none">
-                <div className="inline-flex items-center justify-center w-full h-full btn-primary">
-                  <p className=" ">Get Stared</p>
+                <div className="inline-flex items-center justify-center w-full h-full border px-6 py-6">
+                  <p className=" ">Read More</p>
                 </div>
               </Link>
             </div>
