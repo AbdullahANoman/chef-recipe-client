@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
     const [user,setUser] = useState(null)
+    const [show,setShow] = useState(false);
     const [error,setError] = useState('')
     const [success,setSuccess] = useState('')
     const {signIn} = useContext(AuthContext)
@@ -56,16 +57,18 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
+                <p onClick={()=>setShow(!show)}><small>
+                    {
+                        show ? <span>Hide Password</span> : <span>Show Password</span>
+                    }
+                     </small></p>
               </label>
             </div>
             <div className="form-control mt-6">

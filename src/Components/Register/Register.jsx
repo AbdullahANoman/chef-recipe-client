@@ -7,6 +7,7 @@ import AuthProvider, { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
   const [user, setUser] = useState(null);
+  const [show,setShow] = useState(false)
   const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -90,12 +91,19 @@ const Register = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
                 className="input input-bordered"
                 required
               />
+              <p onClick={()=>setShow(!show)}>
+                <small>
+                    {
+                        show ? <span>Hide Password</span> :  <span>Show Password</span>
+                    }
+                </small>
+              </p>
               <div className="form-control">
                 <label className="cursor-pointer flex mt-2 gap-2">
                   <input
