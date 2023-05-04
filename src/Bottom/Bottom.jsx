@@ -11,7 +11,7 @@ const Bottom = () => {
           </p>
           <div className="md:flex gap-5">
           <input
-            type="text"
+            type="email"
             placeholder="ENTER YOUR EMAIL"
             className="input input-bordered text-black  w-full max-w-xs"
           />

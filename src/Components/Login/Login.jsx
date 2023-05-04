@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import SocialLoginButton from "../SocialLoginButton/SocialLoginButton";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
   const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
@@ -70,13 +70,11 @@ const Login = () => {
               />
               <label className="label">
                 <p onClick={() => setShow(!show)}>
-                  <small>
-                    {show ? (
-                      <span>Hide Password</span>
-                    ) : (
-                      <span>Show Password</span>
-                    )}
-                  </small>
+                <button className="absolute left-[320px] top-[175px]" >
+                    {
+                        show ? <span><FaEyeSlash></FaEyeSlash></span> :  <span><FaEye></FaEye></span>
+                    }
+                </button>
                 </p>
               </label>
               {error && <p className="text-red-600">{error}</p>}

@@ -11,8 +11,10 @@ const ChefCardsLayout = ({ chefsData }) => {
         <div className="col-span-3">
           <ChefsCards chefsData={chefsData}></ChefsCards>
         </div>
-        <div className=" col-span-1">
+        <div className=" sm:ml-[100px] md:ml-0">
+          <div>
           <RightSide></RightSide>
+          </div>
         </div>
       </div>
       <div className="pb-10">

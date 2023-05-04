@@ -2,7 +2,7 @@ import React from "react";
 
 const RightSide = () => {
   return (
-    <div className="">
+    <div className="" >
       <p className="text-2xl text-white font-bold">Our NearBy Restaurant</p>
       <div className="card w-64 shadow-xl mb-10 image-full mt-5 ">
         <figure>

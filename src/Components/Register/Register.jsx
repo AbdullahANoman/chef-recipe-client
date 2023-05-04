@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLoginButton from "../SocialLoginButton/SocialLoginButton";
 import AuthProvider, { AuthContext } from "../../Providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
@@ -107,15 +108,15 @@ const Register = () => {
                 type={show ? "text" : "password"}
                 name="password"
                 placeholder="password"
-                className="input input-bordered"
+                className="input input-bordered relative"
                 required
               />
               <p onClick={()=>setShow(!show)}>
-                <small>
+                <button className="absolute left-[320px] top-[360px]" >
                     {
-                        show ? <span>Hide Password</span> :  <span>Show Password</span>
+                        show ? <span><FaEyeSlash></FaEyeSlash></span> :  <span><FaEye></FaEye></span>
                     }
-                </small>
+                </button>
               </p>
               <div className="form-control">
                 <label className="cursor-pointer flex mt-2 gap-2">

@@ -4,16 +4,24 @@ import Pdf from "react-to-pdf";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 const ref = React.createRef();
 const Blog = () => {
-    const navigation = useNavigation()
-    if(navigation.state === 'loading'){
-    return  (
-      <LoadingSpinner></LoadingSpinner>
-    )
-    }
+  const navigation = useNavigation();
+  if (navigation.state === "loading") {
+    return <LoadingSpinner></LoadingSpinner>;
+  }
   return (
-    
     <>
-      
+      <div className="my-container ">
+        <div className="text-center mt-10">
+          <Pdf targetRef={ref} filename="code-example.pdf">
+            {({ toPdf }) => (
+              <button className="btn-primary " onClick={toPdf}>
+                Generate Pdf
+              </button>
+            )}
+          </Pdf>
+        </div>
+      </div>
+
       <div className="mt-10 my-container" ref={ref}>
         <p className="font-bold text-2xl">
           Question - 1 : Differences between uncontrolled and controlled
@@ -68,13 +76,6 @@ const Blog = () => {
           abstract away complex logic and state management and can be shared
           across multiple components.
         </p>
-      </div>
-      <div className="my-container ">
-      <div className="text-center mt-10">
-      <Pdf targetRef={ref} filename="code-example.pdf">
-        {({ toPdf }) => <button className="btn-primary " onClick={toPdf}>Generate Pdf</button>}
-      </Pdf>
-      </div>
       </div>
     </>
   );

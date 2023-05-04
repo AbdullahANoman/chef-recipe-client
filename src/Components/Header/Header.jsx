@@ -5,8 +5,8 @@ import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../Providers/AuthProvider";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logOut ,userName,userPhotoUrl} = useContext(AuthContext);
-  console.log(userName,userPhotoUrl)
+  const { user, logOut, userName, userPhotoUrl } = useContext(AuthContext);
+  console.log(userName, userPhotoUrl);
 
   const handleLogout = () => {
     logOut();
@@ -51,11 +51,14 @@ const Header = () => {
               {user ? (
                 <>
                   <div className="flex items-center gap-2">
-                    
-                      <div className="w-8  rounded-full">
-                        <img src={userPhotoUrl} className="rounded-full " title={userName} />
-                      </div>
-                    
+                    <div className="w-8  rounded-full">
+                      <img
+                        src={userPhotoUrl}
+                        className="rounded-full "
+                        title={userName}
+                      />
+                    </div>
+
                     <button
                       onClick={handleLogout}
                       className="me-3 mb-5 btn-primary"
@@ -81,7 +84,7 @@ const Header = () => {
               title="Open Menu"
               onClick={() => setIsMenuOpen(true)}
             >
-              <Bars3BottomRightIcon className="w-5 text-gray-600" />
+              <Bars3BottomRightIcon className="w-5 text-white" />
             </button>
             {isMenuOpen && (
               <div className="absolute top-0 left-0 w-full z-10">
@@ -109,7 +112,7 @@ const Header = () => {
                   {/* Mobile Nav Items Section */}
                   <nav>
                     <ul className="space-y-4">
-                      <li>
+                      <li className="text-black">
                         <Link to="/" className="default">
                           Home
                         </Link>
@@ -124,9 +127,39 @@ const Header = () => {
                         </Link>
                       </li>
                       <li>
-                        <button className="btn-primary mt-1 text-lg ">
-                          Login
-                        </button>
+                        <div
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          {user ? (
+                            <>
+                              <div className="flex items-center gap-2">
+                                <div className="w-8  rounded-full">
+                                  <img
+                                    src={userPhotoUrl}
+                                    className="rounded-full "
+                                    title={userName}
+                                  />
+                                </div>
+
+                                <button
+                                  onClick={handleLogout}
+                                  className="me-3 mb-5 btn-primary"
+                                  variant="light"
+                                >
+                                  Log Out
+                                </button>
+                              </div>
+                            </>
+                          ) : (
+                            <Link to="/login">
+                              <button className="btn-primary hidden lg:flex ">
+                                Login
+                              </button>
+                            </Link>
+                          )}
+                        </div>
                       </li>
                     </ul>
                   </nav>
