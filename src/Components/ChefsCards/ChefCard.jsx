@@ -25,11 +25,11 @@ const ChefCard = ({ chef }) => {
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
         
-        <h4> {experience_years} years of experience</h4>
+        <h4 className="text-green-800 font-bold text-xl"> {experience_years} years of experience</h4>
         <h4>Numbers of recipes : {num_recipes}</h4>
         <h2>Likes : {likes}</h2>
         <div className="card-actions justify-end">
-          <Link to={`/chefDetails/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
+          <Link to={`/chefDetails/${id}`}><button className="btn btn-primary-2">View Recipes</button></Link>
         </div>
       </div>
     </div>

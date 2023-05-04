@@ -125,7 +125,7 @@ const Register = () => {
                 success && <p>{success}</p>
             }
             <div className="form-control mt-6">
-              <button className="btn btn-primary" disabled={!accepted}>Register</button>
+              <button className="btn btn-primary " disabled={!accepted}>Register</button>
             </div>
             <p className="text-sm">
               Already Have An Account ?{" "}
