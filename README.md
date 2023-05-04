@@ -7,7 +7,7 @@ A brief description of what this project does and who it's for
 
 * There have chef card  List .
 
-* Chef Card List  And You View The Recipe Details For Every Chef .
+* Chef Card List You Can See The Recipe Details For Every Chef .
 
 * But you have login before to see the recipe details . You are new this website you have to register first then you can see the chef recipe details
 
