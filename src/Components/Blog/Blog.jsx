@@ -1,10 +1,11 @@
 import React from "react";
-// import { PDFDownloadLink } from 'react-pdf/renderer';
-
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 const Blog = () => {
   return (
     <>
-      <div className="mt-10 my-container">
+      
+      <div className="mt-10 my-container" ref={ref}>
         <p className="font-bold text-2xl">
           Question - 1 : Differences between uncontrolled and controlled
           components.?
@@ -59,11 +60,13 @@ const Blog = () => {
           across multiple components.
         </p>
       </div>
-      {/* <PDFDownloadLink document={<MyPDF />} fileName="my-pdf.pdf">
-        {({ blob, url, loading, error }) =>
-          loading ? "Generating PDF..." : "Download PDF"
-        }
-      </PDFDownloadLink> */}
+      <div className="my-container ">
+      <div className="text-center mt-10">
+      <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button className="btn-primary " onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>
+      </div>
+      </div>
     </>
   );
 };

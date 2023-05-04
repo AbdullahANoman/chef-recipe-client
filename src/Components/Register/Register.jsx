@@ -12,6 +12,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const {createUser, name1,updateNamePhoto} = useContext(AuthContext); 
+  
   const handleRegister = (event) => {
     event.preventDefault();
     
@@ -25,13 +26,16 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password, photoUrl);
+    setSuccess('');
     
+    setError('')
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        updateNamePhoto(name,photoUrl)
+        
         console.log(loggedUser)
         setUser(loggedUser);
+        updateNamePhoto(name,photoUrl)
         form.reset();
         setSuccess("User Created Successfully ");
       })
@@ -120,10 +124,10 @@ const Register = () => {
               </div>
             </div>
             {
-                error && <p>{error}</p>
+                error && <p className="text-red-600">{error}</p>
             }
             {
-                success && <p>{success}</p>
+                success && <p className="text-green-600">{success}</p>
             }
             <div className="form-control mt-6">
               <button className="btn btn-primary " disabled={!accepted}>Register</button>
