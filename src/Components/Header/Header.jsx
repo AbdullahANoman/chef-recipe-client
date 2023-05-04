@@ -5,7 +5,8 @@ import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { AuthContext } from "../../Providers/AuthProvider";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut ,userName,userPhotoUrl} = useContext(AuthContext);
+  console.log(userName,userPhotoUrl)
 
   const handleLogout = () => {
     logOut();
@@ -52,7 +53,7 @@ const Header = () => {
                   <div className="flex items-center gap-2">
                     
                       <div className="w-8  rounded-full">
-                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" className="rounded-full " />
+                        <img src={userPhotoUrl} className="rounded-full " title={userName} />
                       </div>
                     
                     <button

@@ -5,6 +5,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
@@ -16,6 +17,10 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
 
+  console.log(user?.displayName)
+  const userName = user?.displayName;
+  const userPhotoUrl = user?.photoURL;
+  console.log(userName,userPhotoUrl)
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -24,6 +29,23 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+  const updateNamePhoto = (name,photoUrl) =>{
+    setLoading(true)
+    return updateProfile(auth.currentUser,{
+        displayName : "Abdullah Al Nomna",
+        photoURL : 'https://lh3.googleusercontent.com/a/AGNmyxbbNe-quK9msiJDWdKyCYgw2RqL88rcI5GDZ2TS=s96-c'
+    }).then(() => {
+        console.log('profile updated',auth.currentUser)
+        console.log(name)
+
+      }).catch((error) => {
+        // An error occurred
+        console.log(error.message)
+        console.log(name)
+
+        // ...
+      });
+  }
   const logOut = () => {
     signOut(auth)
       .then(() => {
@@ -44,11 +66,14 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const authInfo = {
+    userName,
+    userPhotoUrl,
     loading,
     user,
     createUser,
     signIn,
     logOut,
+    updateNamePhoto
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

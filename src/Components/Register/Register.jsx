@@ -10,7 +10,7 @@ const Register = () => {
   const [accepted, setAccepted] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
-  const {createUser, name1} = useContext(AuthContext); 
+  const {createUser, name1,updateNamePhoto} = useContext(AuthContext); 
   const handleRegister = (event) => {
     event.preventDefault();
     
@@ -24,6 +24,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password, photoUrl);
+    updateNamePhoto(name,photoUrl)
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
@@ -35,6 +36,7 @@ const Register = () => {
       .catch((error) => {
         setError(error.message);
       });
+      
   };
   return (
     <div className="hero min-h-screen bg-base-200">

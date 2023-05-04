@@ -16,9 +16,10 @@ const ChefCard = ({ chef }) => {
       <figure>
         <img
           src={picture}
-          style={{height:'150px' , width:'200px'}}
+          
+        //   style={{height:'150px' , width:'200px'}}
           alt="chef picture"
-          className="w-25 h-25"
+          className="w-25 h-25 overflow-auto"
         />
       </figure>
       <div className="card-body">

@@ -15,15 +15,17 @@ import Blog from './Components/Blog/Blog.jsx';
 import Banner from './Components/Banner/Banner.jsx';
 import ChefDetails from './Components/ChefDetails/ChefDetails.jsx';
 import PrivateRout from './Firebase/PrivateRout.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element:<Main></Main>,
+    errorElement : <ErrorPage></ErrorPage>,
     children : [
       {
         path: "/",
         element : <Banner></Banner>,
-        loader : ()=>fetch('http://localhost:5000/chefcard')
+        loader : ()=>fetch('https://chef-recipe-server-abdullahanoman.vercel.app/chefcard')
       },
       {
         path : "login",
@@ -40,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: 'chefDetails/:id',
         element : <PrivateRout><ChefDetails></ChefDetails></PrivateRout>,
-        loader : ({params})=> fetch(`http://localhost:5000/chefDetails/${params.id}`)
+        loader : ({params})=> fetch(`https://chef-recipe-server-abdullahanoman.vercel.app/chefDetails/${params.id}`)
       }
     ]
   },
