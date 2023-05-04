@@ -30,21 +30,11 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
   const updateNamePhoto = (name,photoUrl) =>{
-    setLoading(true)
+    // setLoading(true)
     return updateProfile(auth.currentUser,{
-        displayName : "Abdullah Al Nomna",
-        photoURL : 'https://lh3.googleusercontent.com/a/AGNmyxbbNe-quK9msiJDWdKyCYgw2RqL88rcI5GDZ2TS=s96-c'
-    }).then(() => {
-        console.log('profile updated',auth.currentUser)
-        console.log(name)
-
-      }).catch((error) => {
-        // An error occurred
-        console.log(error.message)
-        console.log(name)
-
-        // ...
-      });
+        displayName : name,
+        photoURL : photoUrl
+    })
   }
   const logOut = () => {
     signOut(auth)

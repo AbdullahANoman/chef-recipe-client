@@ -25,10 +25,11 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password, photoUrl);
-    updateNamePhoto(name,photoUrl)
+    
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
+        updateNamePhoto(name,photoUrl)
         console.log(loggedUser)
         setUser(loggedUser);
         form.reset();
