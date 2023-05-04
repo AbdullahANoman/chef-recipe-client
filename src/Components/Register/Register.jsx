@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLoginButton from "../SocialLoginButton/SocialLoginButton";
 import AuthProvider, { AuthContext } from "../../Providers/AuthProvider";
 
@@ -12,7 +12,10 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const {createUser, name1,updateNamePhoto} = useContext(AuthContext); 
-  
+  const navigate = useNavigate()
+  const refresh = () =>{
+    window.location.reload();
+}
   const handleRegister = (event) => {
     event.preventDefault();
     
@@ -38,6 +41,7 @@ const Register = () => {
         updateNamePhoto(name,photoUrl)
         form.reset();
         setSuccess("User Created Successfully ");
+        refresh()
       })
       .catch((error) => {
         setError(error.message);

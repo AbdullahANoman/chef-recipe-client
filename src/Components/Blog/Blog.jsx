@@ -1,8 +1,17 @@
 import React from "react";
+import { useNavigation } from "react-router-dom";
 import Pdf from "react-to-pdf";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 const ref = React.createRef();
 const Blog = () => {
+    const navigation = useNavigation()
+    if(navigation.state === 'loading'){
+    return  (
+      <LoadingSpinner></LoadingSpinner>
+    )
+    }
   return (
+    
     <>
       
       <div className="mt-10 my-container" ref={ref}>

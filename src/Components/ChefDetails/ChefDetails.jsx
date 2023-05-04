@@ -1,9 +1,16 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import Recipe from "../Recipe/Recipe";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 const ChefDetails = () => {
   const chef = useLoaderData();
+  const navigation = useNavigation()
+    if(navigation.state === 'loading'){
+    return  (
+      <LoadingSpinner></LoadingSpinner>
+    )
+    }
   const {
     name,
     picture,
